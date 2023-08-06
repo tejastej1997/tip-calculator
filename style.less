@@ -65,10 +65,32 @@
 
         &-opt{
             padding: 10px 10px;
-            width: 100px;
+            flex: 1 1 25%;
             border-radius: 5px;
             color: @white;
             background-color: @strongcyan;
+            border: none;
+            font-family: specimen;
+            font-weight: 700;
+            font-size: 20px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: white;
+                box-shadow: 0 0 0 2px inset @strongcyan;
+                color: @strongcyan;
+                transition: all 0.2s;
+            }
+        }
+    }
+
+    &__price{
+        &-input{
+            width: 100%;
+            outline: none;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: @lightgreyishcyan;
             border: none;
         }
     }

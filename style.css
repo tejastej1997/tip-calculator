@@ -42,9 +42,27 @@
 }
 .tipcalculator__options-opt {
   padding: 10px 10px;
-  width: 100px;
+  flex: 1 1 25%;
   border-radius: 5px;
   color: #ffffff;
   background-color: #00494d;
+  border: none;
+  font-family: specimen;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+}
+.tipcalculator__options-opt:hover {
+  background-color: white;
+  box-shadow: 0 0 0 2px inset #00494d;
+  color: #00494d;
+  transition: all 0.2s;
+}
+.tipcalculator__price-input {
+  width: 100%;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #c5e4e7;
   border: none;
 }
