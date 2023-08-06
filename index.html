@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <link rel="stylesheet" href="./style.css">
-  
+
   <title>Frontend Mentor | Tip calculator app</title>
 
 
- 
+
 </head>
+
 <body>
 
   <div class="tipcalculator">
     <div class="tipcalculator__inner">
       <div class="tipcalculator__container">
         <div class="tipcalculator__input">
-            <div class="tipcalculator__price">
-              <label for="">Bill</label>
-              <input type="number" name="" id="" placeholder="$" value="0" >
-              
+          <div class="tipcalculator__price">
+            <label for="">Bill</label><br>
+            <input type="number" name="" id="" placeholder="$" value="0">
+          </div>
+          <div class="tipcalculator__tip">
+            <label for="">Select Tip%</label><br>
+            <div class="tipcalculator__options">
+              <button class="tipcalculator__options-opt">5%</button>
+              <button class="tipcalculator__options-opt">10%</button>
+              <button class="tipcalculator__options-opt">15%</button>
+              <button class="tipcalculator__options-opt">25%</button>
+              <button class="tipcalculator__options-opt">50%</button>
+              <button class="tipcalculator__options-opt">Custom</button>
             </div>
+          </div>
+
+          <div class="tipcalculator__number">
+            <label for="">Number of People</label><br>
+
+          </div>
         </div>
         <div class="tipcalculator__result">
-
+          <div class="tipcalculator__ammount">
+            <span>Tip Amount</span>
+            <span>/ person</span>
+            <h1>$</h1>
+          </div>
         </div>
       </div>
     </div>
   </div>
- 
+
 
 
 
   <script src="./code.js"></script>
 </body>
+
 </html>

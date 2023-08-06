@@ -32,9 +32,44 @@
     &__container{
         background-color: @white;
         padding: 30px;
-        max-width: 600px;
+        max-width: 750px;
         border-radius: 20px;
         position: absolute;
+        // width: 50%;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        gap: 40px;
         
+    }
+
+    &__input{
+        width: 50%;
+        border: 1px solid black;
+    }
+
+    &__result{
+        width: 50%;
+        height: auto;
+        background-color: @strongcyan;
+        border: 1px solid black;
+        padding: 20px;
+        border-radius: 10px;
+
+    }
+
+    &__options{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        &-opt{
+            padding: 10px 10px;
+            width: 100px;
+            border-radius: 5px;
+            color: @white;
+            background-color: @strongcyan;
+            border: none;
+        }
     }
 }
