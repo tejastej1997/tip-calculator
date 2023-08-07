@@ -119,6 +119,7 @@
 @media screen and (max-width: 1024px) {
   .tipcalculator__container {
     flex-direction: column;
+    gap: 20px;
   }
 }
 .tipcalculator__heading {
@@ -130,7 +131,9 @@
 }
 .tipcalculator__input {
   flex: 1 1 50%;
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 .tipcalculator__result {
   flex: 1 1 50%;
@@ -171,15 +174,30 @@
   outline: none;
   padding: 10px;
   border-radius: 5px;
-  background-color: #c5e4e7;
+  background-color: #f4fafa;
   border: none;
+  text-align: right;
+  box-shadow: 1px 1px 1px #c5e4e7;
+  color: #00494d;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  font-size: 20px;
+}
+.tipcalculator__price-input[type="value"] {
+  text-align: left !important;
+}
+.tipcalculator__dollar-icon {
+  position: absolute;
+  top: 2px;
+  left: 10px;
 }
 .tipcalculator__people {
-  background-color: #c5e4e7;
-  padding: 5px 8px;
+  background-color: #f4fafa;
+  padding: 3px 8px;
   display: flex;
-  display: flex ;
   align-items: center;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #c5e4e7;
 }
 .tipcalculator__icon {
   color: #5e7a7d;
@@ -188,9 +206,11 @@
 .tipcalculator__peopleinput {
   padding: 5px;
   width: 100%;
-  background-color: #c5e4e7;
+  background-color: #f4fafa;
   border: none;
   outline: none;
+  text-align: right;
+  position: relative;
   color: #00494d;
   font-weight: 700;
   font-family: 'Space Mono', monospace;

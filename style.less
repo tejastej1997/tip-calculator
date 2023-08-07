@@ -24,7 +24,6 @@
         max-width: 1440px;
         background-color: @lightgreyishcyan;
         margin: 0 auto;
-        
         height: 100vh;
         display: flex;
         justify-content: center;
@@ -46,7 +45,8 @@
 
         @media screen and (max-width:1024px) {
             flex-direction: column;
-            
+            gap: 20px;
+
         }
 
     }
@@ -61,11 +61,14 @@
 
     &__input {
         flex: 1 1 50%;
-        border: 1px solid black;
+        // border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
 
     &__result {
-      flex: 1 1 50%;
+        flex: 1 1 50%;
         height: auto;
         background-color: @strongcyan;
         border: 1px solid black;
@@ -112,18 +115,37 @@
             outline: none;
             padding: 10px;
             border-radius: 5px;
-            background-color: @lightgreyishcyan;
+            background-color: @verylightgreyishcyan;
             border: none;
+            text-align: right;
+            box-shadow: 1px 1px 1px @lightgreyishcyan;
+            color: @strongcyan;
+            font-weight: 700;
+            font-family: 'Space Mono', monospace;
+            font-size: 20px;
+
+            &[type = "value"]{
+              text-align: left !important;
+            }
+
         }
     }
 
+    &__dollar-icon{
+        position: absolute;
+        top: 2px;
+        left: 10px;
+    }
+
     &__people {
-        background-color: @lightgreyishcyan;
-        padding: 5px 8px;
+        background-color: @verylightgreyishcyan;
+        padding: 3px 8px;
         display: flex;
         align-items: center;
-        display:flex ;
+        display: flex;
         align-items: center;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px @lightgreyishcyan;
 
     }
 
@@ -135,9 +157,11 @@
     &__peopleinput {
         padding: 5px;
         width: 100%;
-        background-color: @lightgreyishcyan;
+        background-color: @verylightgreyishcyan;
         border: none;
         outline: none;
+        text-align: right;
+        position: relative;
 
         color: @strongcyan;
         font-weight: 700;
