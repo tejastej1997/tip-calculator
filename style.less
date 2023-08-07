@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&family=Cabin:ital@1&family=Caveat&family=IBM+Plex+Mono&family=Montserrat:wght@400;700;900&family=Nunito:wght@200&family=Orbitron&family=Poppins:wght@200&family=Roboto&family=Rubik&family=Space+Mono:wght@700&display=swap');
 
 
 // color variables
 
-@strongcyan : #26c0ab;
+@cyan : #26c0ab;
 @strongcyan : #00494d;
 @darkgreyishcyan : #5e7a7d;
 @greyishcyan : #7f9c9f;
@@ -11,45 +12,60 @@
 @white : #ffffff;
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 
-.tipcalculator{
-    &__inner{
+.tipcalculator {
+    &__inner {
         max-width: 1440px;
         background-color: @lightgreyishcyan;
         margin: 0 auto;
+        
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    &__container{
+    &__container {
         background-color: @white;
         padding: 30px;
         max-width: 750px;
         border-radius: 20px;
         position: absolute;
+        margin: 0 20px;
         // width: 50%;
         display: flex;
         align-items: stretch;
         justify-content: center;
         gap: 40px;
-        
+
+        @media screen and (max-width:1024px) {
+            flex-direction: column;
+            
+        }
+
     }
 
-    &__input{
-        width: 50%;
+    &__heading {
+        font-family: 'Space Mono', monospace;
+        margin-bottom: 10px;
+        display: block;
+        color: @strongcyan;
+        opacity: 0.7;
+    }
+
+    &__input {
+        flex: 1 1 50%;
         border: 1px solid black;
     }
 
-    &__result{
-        width: 50%;
+    &__result {
+      flex: 1 1 50%;
         height: auto;
         background-color: @strongcyan;
         border: 1px solid black;
@@ -58,34 +74,40 @@
 
     }
 
-    &__options{
+    &__options {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
 
-        &-opt{
+        &-opt {
             padding: 10px 10px;
             flex: 1 1 25%;
             border-radius: 5px;
             color: @white;
             background-color: @strongcyan;
             border: none;
-            font-family: specimen;
+            font-family: 'Space Mono', monospace;
+            // font-family: specimen;
             font-weight: 700;
             font-size: 20px;
             cursor: pointer;
 
-            &:hover{
-                background-color: white;
-                box-shadow: 0 0 0 2px inset @strongcyan;
+            &.custom {
+                background-color: @verylightgreyishcyan;
+                color: @darkgreyishcyan;
+            }
+
+            &:hover {
+                background-color: @cyan;
+                // box-shadow: 0 0 0 2px inset @strongcyan;
                 color: @strongcyan;
                 transition: all 0.2s;
             }
         }
     }
 
-    &__price{
-        &-input{
+    &__price {
+        &-input {
             width: 100%;
             outline: none;
             padding: 10px;
@@ -93,5 +115,34 @@
             background-color: @lightgreyishcyan;
             border: none;
         }
+    }
+
+    &__people {
+        background-color: @lightgreyishcyan;
+        padding: 5px 8px;
+        display: flex;
+        align-items: center;
+        display:flex ;
+        align-items: center;
+
+    }
+
+    &__icon {
+        color: @darkgreyishcyan;
+        opacity: 0.7;
+    }
+
+    &__peopleinput {
+        padding: 5px;
+        width: 100%;
+        background-color: @lightgreyishcyan;
+        border: none;
+        outline: none;
+
+        color: @strongcyan;
+        font-weight: 700;
+        font-family: 'Space Mono', monospace;
+        font-size: 20px;
+
     }
 }

@@ -7,13 +7,11 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./style.css">
-
   <title>Frontend Mentor | Tip calculator app</title>
-
-
-
 </head>
 
 <body>
@@ -23,23 +21,27 @@
       <div class="tipcalculator__container">
         <div class="tipcalculator__input">
           <div class="tipcalculator__price">
-            <label for="">Bill</label><br>
-            <input type="number" name="" id="input-field" class="tipcalculator__price-input" placeholder="$" value="0">
+            <label for=" " class="tipcalculator__heading">Bill</label>
+            <input type="number" name="" id="input-field" class="tipcalculator__price-input" value="$">
           </div>
           <div class="tipcalculator__tip">
-            <label for="">Select Tip%</label><br>
+            <label for="" class="tipcalculator__heading">Select Tip%</label>
             <div class="tipcalculator__options">
               <button class="tipcalculator__options-opt">5%</button>
               <button class="tipcalculator__options-opt">10%</button>
               <button class="tipcalculator__options-opt">15%</button>
               <button class="tipcalculator__options-opt">25%</button>
               <button class="tipcalculator__options-opt">50%</button>
-              <button class="tipcalculator__options-opt">Custom</button>
+              <button class="tipcalculator__options-opt custom">Custom</button>
             </div>
           </div>
-
           <div class="tipcalculator__number">
-            <label for="">Number of People</label><br>
+            <label for="" class="tipcalculator__heading">Number of People</label>
+            <div class="tipcalculator__people">
+              <i class="fa-solid fa-user tipcalculator__icon"></i>
+              <input type="text" class="tipcalculator__peopleinput" >
+
+            </div>
           </div>
         </div>
         <div class="tipcalculator__result">

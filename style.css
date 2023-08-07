@@ -1,3 +1,95 @@
+@font-face {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/arimo/v28/P5sfzZCDf9_T_3cV7NCUECyoxNk338xsBw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Cabin';
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/cabin/v26/u-4V0qWljRw-Pd815fNqc8T_wAFcX-c37MPiNYlWniJ2hJXHx_Klwg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/caveat/v17/WnznHAc5bAfYB2QRah7pcpNvOx-pjfJ9SII.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v19/-F63fjptAgt5VM-kVkqdyU8n5ig.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvC70w-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v25/XRXI3I6Li01BKofiOc5wtlZ2di8HDDshRTM.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/orbitron/v29/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nyGy6xpg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLFj_V1s.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4i1UA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/spacemono/v13/i7dMIFZifjKcF5UAWdDRaPpZYFI.ttf) format('truetype');
+}
 * {
   margin: 0;
   padding: 0;
@@ -18,17 +110,30 @@
   max-width: 750px;
   border-radius: 20px;
   position: absolute;
+  margin: 0 20px;
   display: flex;
   align-items: stretch;
   justify-content: center;
   gap: 40px;
 }
+@media screen and (max-width: 1024px) {
+  .tipcalculator__container {
+    flex-direction: column;
+  }
+}
+.tipcalculator__heading {
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 10px;
+  display: block;
+  color: #00494d;
+  opacity: 0.7;
+}
 .tipcalculator__input {
-  width: 50%;
+  flex: 1 1 50%;
   border: 1px solid black;
 }
 .tipcalculator__result {
-  width: 50%;
+  flex: 1 1 50%;
   height: auto;
   background-color: #00494d;
   border: 1px solid black;
@@ -47,14 +152,17 @@
   color: #ffffff;
   background-color: #00494d;
   border: none;
-  font-family: specimen;
+  font-family: 'Space Mono', monospace;
   font-weight: 700;
   font-size: 20px;
   cursor: pointer;
 }
+.tipcalculator__options-opt.custom {
+  background-color: #f4fafa;
+  color: #5e7a7d;
+}
 .tipcalculator__options-opt:hover {
-  background-color: white;
-  box-shadow: 0 0 0 2px inset #00494d;
+  background-color: #26c0ab;
   color: #00494d;
   transition: all 0.2s;
 }
@@ -65,4 +173,26 @@
   border-radius: 5px;
   background-color: #c5e4e7;
   border: none;
+}
+.tipcalculator__people {
+  background-color: #c5e4e7;
+  padding: 5px 8px;
+  display: flex;
+  display: flex ;
+  align-items: center;
+}
+.tipcalculator__icon {
+  color: #5e7a7d;
+  opacity: 0.7;
+}
+.tipcalculator__peopleinput {
+  padding: 5px;
+  width: 100%;
+  background-color: #c5e4e7;
+  border: none;
+  outline: none;
+  color: #00494d;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  font-size: 20px;
 }
