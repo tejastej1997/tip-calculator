@@ -25,7 +25,7 @@
 
             <div class="tipcalculator__people">
               <i class="fa-solid fa-dollar-sign tipcalculator__icon"></i>
-              <input type="text" class="tipcalculator__peopleinput" >
+              <input type="text" class="tipcalculator__peopleinput">
             </div>
           </div>
           <div class="tipcalculator__tip">
@@ -36,23 +36,36 @@
               <button class="tipcalculator__options-opt">15%</button>
               <button class="tipcalculator__options-opt">25%</button>
               <button class="tipcalculator__options-opt">50%</button>
-              <button class="tipcalculator__options-opt custom" id="custom-btn" >Custom</button>
+              <button class="tipcalculator__options-opt custom" id="custom-btn">Custom</button>
             </div>
-            <input type="text" class="tipcalculator__options-custom hide" id="custom-input" placeholder="Enter your tip %" >
+            <input type="text" class="tipcalculator__options-custom hide" id="custom-input"
+              placeholder="Enter your tip %">
           </div>
           <div class="tipcalculator__number">
             <label for="" class="tipcalculator__heading">Number of People</label>
             <div class="tipcalculator__people">
               <i class="fa-solid fa-user tipcalculator__icon"></i>
-              <input type="text" class="tipcalculator__peopleinput" >
+              <input type="text" class="tipcalculator__peopleinput">
             </div>
           </div>
         </div>
         <div class="tipcalculator__result">
           <div class="tipcalculator__ammount">
-            <span>Tip Amount</span>
-            <span>/ person</span>
-            <h1>$</h1>
+            <div class="tipcalculator__result__row">
+              <section class="tipcalculator__result-content" >
+                <span class="tipcalculator__result-line1" >Tip Amount</span>
+                <span class="tipcalculator__result-line2" >/ person</span>
+              </section>
+              <h1 class="tipcalculator__result-per-person" >$4.27</h1>
+            </div>
+            <div class="tipcalculator__result__row">
+              <section class="tipcalculator__result-content" >
+                <span class="tipcalculator__result-line1" >Tip Amount</span>
+                <span class="tipcalculator__result-line2" >/ person</span>
+              </section>
+              <h1 class="tipcalculator__result-per-person" >$4.27</h1>
+            </div>
+            <button class="tipcalculator__reset" >Reset</button>
           </div>
         </div>
       </div>

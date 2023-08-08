@@ -135,14 +135,6 @@
   flex-direction: column;
   gap: 30px;
 }
-.tipcalculator__result {
-  flex: 1 1 50%;
-  height: auto;
-  background-color: #00494d;
-  border: 1px solid black;
-  padding: 20px;
-  border-radius: 10px;
-}
 .tipcalculator__options {
   display: flex;
   flex-wrap: wrap;
@@ -182,6 +174,7 @@
   color: #00494d;
   font-weight: 700;
   font-family: 'Space Mono', monospace;
+  box-shadow: 1px 1px 1px #c5e4e7;
 }
 .tipcalculator__price-input {
   width: 100%;
@@ -229,6 +222,60 @@
   font-weight: 700;
   font-family: 'Space Mono', monospace;
   font-size: 20px;
+}
+.tipcalculator__result {
+  flex: 1 1 50%;
+  height: auto;
+  background-color: #00494d;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+}
+.tipcalculator__result__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tipcalculator__result-content {
+  display: flex;
+  flex-direction: column;
+}
+.tipcalculator__result-line1 {
+  color: #ffffff;
+  font-family: 'Space Mono', monospace;
+}
+.tipcalculator__result-line2 {
+  color: #5e7a7d;
+  font-family: 'Space Mono', monospace;
+}
+.tipcalculator__result-per-person {
+  font-family: 'Space Mono', monospace;
+  color: #26c0ab;
+  font-size: 40px;
+}
+.tipcalculator__ammount {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 100%;
+}
+.tipcalculator__reset {
+  margin-top: auto;
+  padding: 10px;
+  border: none;
+  background-color: #26c0ab;
+  color: #00494d;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  font-size: 15px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.tipcalculator__reset:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 1px inset #c5e4e7;
+  transition: 0.2s all;
 }
 .hide {
   display: none;
