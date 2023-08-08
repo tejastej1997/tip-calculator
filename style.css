@@ -169,6 +169,20 @@
   color: #00494d;
   transition: all 0.2s;
 }
+.tipcalculator__options-custom {
+  width: 100%;
+  margin: 20px 0 0;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: #f4fafa;
+  font-size: 20px;
+  text-align: right;
+  color: #00494d;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+}
 .tipcalculator__price-input {
   width: 100%;
   outline: none;
@@ -215,4 +229,7 @@
   font-weight: 700;
   font-family: 'Space Mono', monospace;
   font-size: 20px;
+}
+.hide {
+  display: none;
 }
