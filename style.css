@@ -277,6 +277,15 @@
   box-shadow: 0 0 0 1px inset #c5e4e7;
   transition: 0.2s all;
 }
+.tipcalculator__selected-tip {
+  font-family: 'Space Mono', monospace;
+  margin-top: 30px;
+  padding: 10px 0;
+  color: #00494d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .hide {
   display: none;
 }
