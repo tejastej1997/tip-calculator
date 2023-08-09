@@ -4,6 +4,7 @@ let custominput = document.getElementById('custom-input')
 let reset = document.getElementById('reset')
 let tippercentage = document.querySelectorAll('.tipcalculator__options-opt')
 let selectedtip = document.getElementsByClassName('tipcalculator__selected-tip')
+let enterbutton = document.getElementById('enter-button')
 
 console.log(selectedtip);
 
@@ -32,5 +33,9 @@ for (const btn of tippercentage) {
     })
     
 }
+
+enterbutton.addEventListener('click',()=>{
+    
+})
 
 
