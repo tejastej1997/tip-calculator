@@ -5,7 +5,8 @@ let reset = document.getElementById('reset')
 let tippercentage = document.querySelectorAll('.tipcalculator__options-opt')
 let selectedtip = document.getElementsByClassName('tipcalculator__selected-tip')
 let enterbutton = document.getElementById('enter-button')
-
+let billinput = document.getElementById('bill-input')
+let billammount = document.getElementById('bill-ammount')
 
 console.log(tippercentage.length);
 
@@ -45,6 +46,17 @@ custominput.addEventListener('keyup',()=>{
 })
 
 enterbutton.addEventListener('click',()=>{
+
+    if (billammount.value== '' || billammount.value== undefined) {
+        billinput.classList.remove('hide')
+       
+    }
+    else{
+        billinput.classList.add('hide')
+    }
+
+    
+
     
 })
 

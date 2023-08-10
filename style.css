@@ -129,6 +129,13 @@
   display: block;
   color: #00494d;
   opacity: 0.7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tipcalculator__heading span {
+  font-size: 12px;
+  color: red;
 }
 .tipcalculator__input {
   flex: 1 1 50%;
