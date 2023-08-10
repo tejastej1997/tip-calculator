@@ -6,7 +6,8 @@ let tippercentage = document.querySelectorAll('.tipcalculator__options-opt')
 let selectedtip = document.getElementsByClassName('tipcalculator__selected-tip')
 let enterbutton = document.getElementById('enter-button')
 
-console.log(selectedtip);
+
+console.log(tippercentage.length);
 
 let tipammount = document.getElementById('tip-ammount')
 
@@ -14,6 +15,8 @@ let input = document.querySelectorAll('input')
 
 custombtn.addEventListener('click',()=>{
     custominput.classList.remove('hide')
+    selectedtip[0].classList.add('hide')
+
 })
 
 reset.addEventListener('click',()=>{
@@ -24,15 +27,22 @@ reset.addEventListener('click',()=>{
     console.log('reset triggered');
 })
 
-for (const btn of tippercentage) {
+for (let btn =0; btn<=tippercentage.length-2;btn++ ) {
 
-    btn.addEventListener('click',()=>{
-        tipammount.innerHTML = btn.value;
+    tippercentage[btn].addEventListener('click',()=>{
+        tipammount.innerHTML = tippercentage[btn].value;
         selectedtip[0].classList.remove('hide')
-        console.log(btn.value);
+        // console.log(btn.value);
     })
     
 }
+
+custominput.addEventListener('keyup',()=>{
+    selectedtip[0].classList.remove('hide')
+    tipammount.innerHTML = custominput.value + "%";
+
+
+})
 
 enterbutton.addEventListener('click',()=>{
     
