@@ -30,11 +30,11 @@
           <div class="tipcalculator__tip">
             <label for="" class="tipcalculator__heading">Select Tip%</label>
             <div class="tipcalculator__options">
-              <button class="tipcalculator__options-opt" value="5%"  >5%</button>
-              <button class="tipcalculator__options-opt" value="10%">10%</button>
-              <button class="tipcalculator__options-opt" value="15%">15%</button>
-              <button class="tipcalculator__options-opt" value="25%">25%</button>
-              <button class="tipcalculator__options-opt" value="50%">50%</button>
+              <button class="tipcalculator__options-opt" value="5"  >5%</button>
+              <button class="tipcalculator__options-opt" value="10">10%</button>
+              <button class="tipcalculator__options-opt" value="15">15%</button>
+              <button class="tipcalculator__options-opt" value="25">25%</button>
+              <button class="tipcalculator__options-opt" value="50">50%</button>
               <button class="tipcalculator__options-opt custom" id="custom-btn">Custom</button>
             </div>
             <input type="text" class="tipcalculator__options-custom hide" id="custom-input"
@@ -56,14 +56,14 @@
                 <span class="tipcalculator__result-line1" >Tip Amount</span>
                 <span class="tipcalculator__result-line2" >/ person</span>
               </section>
-              <h1 class="tipcalculator__result-per-person" >$4.27</h1>
+              <h1 class="tipcalculator__result-per-person" id="per-person" >$0.00</h1>
             </div>
             <div class="tipcalculator__result__row">
               <section class="tipcalculator__result-content" >
                 <span class="tipcalculator__result-line1" >Total</span>
                 <span class="tipcalculator__result-line2" >/ bill</span>
               </section>
-              <h1 class="tipcalculator__result-per-person" >$4.27</h1>
+              <h1 class="tipcalculator__result-per-person" id="total-bill" >$0.00</h1>
             </div>
             <button class="tipcalculator__reset" id="reset" >Reset</button>
           </div>
