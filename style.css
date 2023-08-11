@@ -171,7 +171,6 @@
 }
 .tipcalculator__options-custom {
   width: 100%;
-  margin: 20px 0 0;
   padding: 10px;
   border-radius: 5px;
   outline: none;
@@ -183,6 +182,18 @@
   font-weight: 700;
   font-family: 'Space Mono', monospace;
   box-shadow: 1px 1px 1px #c5e4e7;
+}
+.tipcalculator__custom-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tipcalculator__custom-error {
+  margin-left: auto;
+  font-family: 'Space Mono', monospace;
+  color: red;
+  font-size: 12px;
 }
 .tipcalculator__price-input {
   width: 100%;

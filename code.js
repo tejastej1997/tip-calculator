@@ -56,7 +56,7 @@ enterbutton.addEventListener('click', () => {
     ) {
         billinput.classList.remove('hide')
         peopleinput.classList.remove('hide')
-        peopleinput.innerHTML= 'Cannot be empty'
+        peopleinput.innerHTML = 'Cannot be empty'
         billinput.innerHTML = 'Bill ammount cannot be empty'
         perperson.innerHTML = "$0.00"
 
@@ -66,7 +66,12 @@ enterbutton.addEventListener('click', () => {
         billinput.classList.remove('hide')
         peopleinput.classList.remove('hide')
         billinput.innerHTML = 'Bill ammount cannot be Zero'
-        peopleinput.innerHTML= 'Cannot be Zero'
+        peopleinput.innerHTML = 'Cannot be Zero'
+    }
+
+    else if (custombtn.click == true && custominput.value == "") {
+        
+
     }
     else {
         billinput.classList.add('hide')
