@@ -11,18 +11,23 @@ let perperson = document.getElementById('per-person')
 let peopleinput = document.getElementById('people-input')
 let numberofpeople = document.getElementById('number-of-people')
 let tipinput = document.getElementById('tip-input')
+let tipammount = document.getElementById('tip-ammount')
+let input = document.querySelectorAll('input')
+
+
+
 
 let tipvalue;
 
-let tipammount = document.getElementById('tip-ammount')
-
-let input = document.querySelectorAll('input')
+var boolean = false;
 
 custombtn.addEventListener('click', () => {
     custominput.classList.remove('hide')
     selectedtip[0].classList.add('hide')
-
+    boolean = true;
 })
+
+
 
 reset.addEventListener('click', () => {
 
@@ -38,7 +43,6 @@ for (let btn = 0; btn <= tippercentage.length - 2; btn++) {
         tipvalue = tippercentage[btn].value;
         tipammount.innerHTML = tippercentage[btn].value + "%";
         selectedtip[0].classList.remove('hide')
-        // console.log(btn.value);
     })
 
 }
@@ -46,39 +50,34 @@ for (let btn = 0; btn <= tippercentage.length - 2; btn++) {
 custominput.addEventListener('keyup', () => {
     selectedtip[0].classList.remove('hide')
     tipammount.innerHTML = custominput.value + "%";
-
-
 })
+
+
 
 enterbutton.addEventListener('click', () => {
 
-    if (billammount.value == '' || billammount.value == undefined || custominput.value == "" || custominput.value == undefined ||
-        peopleinput.value == " " || peopleinput.value == undefined
-    ) {
+  
+
+    if (billammount.value == '' || billammount.value == undefined) {
         billinput.classList.remove('hide')
-        peopleinput.classList.remove('hide')
-        peopleinput.innerHTML = 'Cannot be empty'
         billinput.innerHTML = 'Bill ammount cannot be empty'
         perperson.innerHTML = "$0.00"
-
+       
     }
-
-    else if (billammount.value == 0 || peopleinput.value == 0) {
+    else if (billammount.value == 0) {
         billinput.classList.remove('hide')
-        peopleinput.classList.remove('hide')
         billinput.innerHTML = 'Bill ammount cannot be Zero'
         peopleinput.innerHTML = 'Cannot be Zero'
     }
-
-    else if (custombtn.click == true && custominput.value == "") {
-
-        tipinput.innerHTML = 'Cannot be Empty'
+    else if (peopleinput.value == " " || peopleinput.value == undefined) {
+        peopleinput.classList.remove('hide')
+        peopleinput.innerHTML = 'Cannot be empty'
+        
     }
-
-    else if (custombtn.click == true && custominput.value == 0) {
-
-        tipinput.innerHTML = 'Cannot be Zero'
-
+    else if (custominput.value == " ") {
+      
+        alert('clicked')
+        tipinput.innerHTML = 'Cannot be empty'
     }
 
     else {
@@ -90,8 +89,6 @@ enterbutton.addEventListener('click', () => {
 
 })
 
-if (custombtn.clicked == true) {
-    console.log('btn clicked');
-}
+
 
 
