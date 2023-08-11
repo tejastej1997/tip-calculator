@@ -8,68 +8,77 @@ let enterbutton = document.getElementById('enter-button')
 let billinput = document.getElementById('bill-input')
 let billammount = document.getElementById('bill-ammount')
 let perperson = document.getElementById('per-person')
+let peopleinput = document.getElementById('people-input')
+let numberofpeople = document.getElementById('number-of-people')
 
-let tipvalue ;
-
-
-console.log(tippercentage.length);
+let tipvalue;
 
 let tipammount = document.getElementById('tip-ammount')
 
 let input = document.querySelectorAll('input')
 
-custombtn.addEventListener('click',()=>{
+custombtn.addEventListener('click', () => {
     custominput.classList.remove('hide')
     selectedtip[0].classList.add('hide')
 
 })
 
-reset.addEventListener('click',()=>{
+reset.addEventListener('click', () => {
 
-    for(let inputs of input){
-        inputs.value='';
+    for (let inputs of input) {
+        inputs.value = '';
     }
-    console.log('reset triggered');
+
 })
 
-for (let btn =0; btn<=tippercentage.length-2;btn++ ) {
+for (let btn = 0; btn <= tippercentage.length - 2; btn++) {
 
-    tippercentage[btn].addEventListener('click',()=>{
-        tipvalue=tippercentage[btn].value;
+    tippercentage[btn].addEventListener('click', () => {
+        tipvalue = tippercentage[btn].value;
         tipammount.innerHTML = tippercentage[btn].value + "%";
         selectedtip[0].classList.remove('hide')
         // console.log(btn.value);
     })
-    
+
 }
 
-custominput.addEventListener('keyup',()=>{
+custominput.addEventListener('keyup', () => {
     selectedtip[0].classList.remove('hide')
     tipammount.innerHTML = custominput.value + "%";
 
 
 })
 
-enterbutton.addEventListener('click',()=>{
+enterbutton.addEventListener('click', () => {
 
-    if (billammount.value== '' || billammount.value== undefined) {
+    if (billammount.value == '' || billammount.value == undefined || custominput.value == "" || custominput.value == undefined ||
+        peopleinput.value == " " || peopleinput.value == undefined
+    ) {
         billinput.classList.remove('hide')
+        peopleinput.classList.remove('hide')
+        peopleinput.innerHTML= 'Cannot be empty'
+        billinput.innerHTML = 'Bill ammount cannot be empty'
+        perperson.innerHTML = "$0.00"
 
-        perperson.innerHTML = "0.00"
-       
     }
-    else{
+
+    else if (billammount.value == 0 || peopleinput.value == 0) {
+        billinput.classList.remove('hide')
+        peopleinput.classList.remove('hide')
+        billinput.innerHTML = 'Bill ammount cannot be Zero'
+        peopleinput.innerHTML= 'Cannot be Zero'
+    }
+    else {
         billinput.classList.add('hide')
+        perperson.innerHTML = (Number(billammount.value) * Number(tipvalue)) / 100;
+
     }
 
-    perperson.innerHTML = ( Number(billammount.value)  * Number(tipvalue)) / 100;
 
-    console.log(typeof billammount.value);
-    console.log(typeof tippercentage.value);
-    console.log(tipvalue);
-    
 
-    
+
+
+
 })
 
 
