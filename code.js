@@ -88,10 +88,10 @@ enterbutton.addEventListener('click', () => {
     }
 
 
-
-
-
-
 })
+
+if (custombtn.clicked == true) {
+    console.log('btn clicked');
+}
 
 
