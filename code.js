@@ -10,6 +10,7 @@ let billammount = document.getElementById('bill-ammount')
 let perperson = document.getElementById('per-person')
 let peopleinput = document.getElementById('people-input')
 let numberofpeople = document.getElementById('number-of-people')
+let tipinput = document.getElementById('tip-input')
 
 let tipvalue;
 
@@ -70,9 +71,16 @@ enterbutton.addEventListener('click', () => {
     }
 
     else if (custombtn.click == true && custominput.value == "") {
-        
+
+        tipinput.innerHTML = 'Cannot be Empty'
+    }
+
+    else if (custombtn.click == true && custominput.value == 0) {
+
+        tipinput.innerHTML = 'Cannot be Zero'
 
     }
+
     else {
         billinput.classList.add('hide')
         perperson.innerHTML = (Number(billammount.value) * Number(tipvalue)) / 100;
