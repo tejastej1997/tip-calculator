@@ -14,6 +14,7 @@ let tipinput = document.getElementById('tip-input')
 let tipammount = document.getElementById('tip-ammount')
 let input = document.querySelectorAll('input')
 let totalbill = document.getElementById('total-bill')
+let percentageinput = document.getElementById('percentage-input')
 
 
 
@@ -49,6 +50,7 @@ for (let btn = 0; btn <= tippercentage.length - 2; btn++) {
         boolean = false;
         percentage= true;
         custominput.classList.add('hide')
+        percentageinput.classList.add('hide')
 
     })
 
@@ -78,7 +80,7 @@ enterbutton.addEventListener('click', () => {
 
     }
     else if (percentage == false) {
-        
+        percentageinput.classList.remove('hide')
     }
     else if (numberofpeople.value == '' || numberofpeople.value == undefined) {
         billinput.classList.add('hide')
