@@ -20,7 +20,9 @@ let totalbill = document.getElementById('total-bill')
 
 let tipvalue;
 
+
 var boolean = false;
+var percentage = false;
 
 custombtn.addEventListener('click', () => {
     custominput.classList.remove('hide')
@@ -45,6 +47,7 @@ for (let btn = 0; btn <= tippercentage.length - 2; btn++) {
         tipammount.innerHTML = tippercentage[btn].value + "%";
         selectedtip[0].classList.remove('hide')
         boolean = false;
+        percentage= true;
         custominput.classList.add('hide')
 
     })
@@ -74,7 +77,10 @@ enterbutton.addEventListener('click', () => {
         console.log('condition 2');
 
     }
-    else if (numberofpeople.value == '' || numberofpeople.value == undefined ) {
+    else if (percentage == false) {
+        
+    }
+    else if (numberofpeople.value == '' || numberofpeople.value == undefined) {
         billinput.classList.add('hide')
         peopleinput.classList.remove('hide')
         peopleinput.innerHTML = 'Cannot be empty'
@@ -89,11 +95,23 @@ enterbutton.addEventListener('click', () => {
         console.log('condition 4');
 
     }
+    else if (boolean == true && custominput.value == '' || custominput.value == undefined) {
+        tipinput.classList.remove('hide')
+        tipinput.innerHTML = 'Cannot be Empty'
+        // console.log('custom input');
+    }
+    else if (boolean == true && custominput.value == 0) {
+        tipinput.classList.remove('hide')
+        tipinput.innerHTML = 'Cannot be Zero'
+        // console.log('custom input');
+    }
 
 
     else {
 
-        let perpersonammount
+        peopleinput.classList.add('hide')
+
+        let perpersonammount;
 
         if (boolean != true) {
             perpersonammount = (Number(billammount.value) * Number(tipvalue)) / 100;
