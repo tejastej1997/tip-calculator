@@ -77,6 +77,11 @@ enterbutton.addEventListener('click', () => {
         billinput.classList.remove('hide')
         billinput.innerHTML = 'Bill ammount cannot be Zero'
         peopleinput.innerHTML = 'Cannot be Zero'
+<<<<<<< HEAD
+=======
+      
+
+>>>>>>> c6a3f8d91541ca43af3d938a39faace70c3a3dfe
     }
     else if (percentage == false) {
         percentageinput.classList.remove('hide')
