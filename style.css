@@ -143,6 +143,11 @@
   flex-direction: column;
   gap: 30px;
 }
+@media screen and (max-width: 767px) {
+  .tipcalculator__input {
+    gap: 10px;
+  }
+}
 .tipcalculator__options {
   display: flex;
   flex-wrap: wrap;
@@ -278,6 +283,11 @@
   gap: 30px;
   height: 100%;
 }
+@media screen and (max-width: 767px) {
+  .tipcalculator__ammount {
+    gap: 10px;
+  }
+}
 .tipcalculator__reset {
   margin-top: auto;
   padding: 10px;
@@ -304,6 +314,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .tipcalculator__selected-tip {
+    margin-top: 10px;
+  }
 }
 .tipcalculator__enter {
   position: absolute;
