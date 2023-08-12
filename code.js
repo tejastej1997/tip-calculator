@@ -70,24 +70,25 @@ enterbutton.addEventListener('click', () => {
         billinput.classList.remove('hide')
         billinput.innerHTML = 'Bill ammount cannot be empty'
         perperson.innerHTML = "$0.00"
-        console.log('condition 1');
+       
 
     }
     else if (billammount.value == 0) {
         billinput.classList.remove('hide')
         billinput.innerHTML = 'Bill ammount cannot be Zero'
         peopleinput.innerHTML = 'Cannot be Zero'
-        console.log('condition 2');
+      
 
     }
     else if (percentage == false) {
         percentageinput.classList.remove('hide')
+        billinput.classList.add('hide')
+
     }
     else if (numberofpeople.value == '' || numberofpeople.value == undefined) {
-        billinput.classList.add('hide')
         peopleinput.classList.remove('hide')
         peopleinput.innerHTML = 'Cannot be empty'
-        console.log('condition 3');
+     
 
     }
     else if (numberofpeople.value == 0) {
@@ -95,7 +96,7 @@ enterbutton.addEventListener('click', () => {
         peopleinput.classList.remove('hide')
         peopleinput.innerHTML = 'Cannot be Zero'
 
-        console.log('condition 4');
+     
 
     }
     else if (boolean == true && custominput.value == '' || custominput.value == undefined) {
