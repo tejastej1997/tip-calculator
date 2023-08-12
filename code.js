@@ -34,6 +34,7 @@ custombtn.addEventListener('click', () => {
 
 
 reset.addEventListener('click', () => {
+    selectedtip[0].classList.add('hide')
 
     for (let inputs of input) {
         inputs.value = '';
