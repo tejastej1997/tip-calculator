@@ -44,6 +44,9 @@ for (let btn = 0; btn <= tippercentage.length - 2; btn++) {
         tipvalue = tippercentage[btn].value;
         tipammount.innerHTML = tippercentage[btn].value + "%";
         selectedtip[0].classList.remove('hide')
+        boolean = false;
+        custominput.classList.add('hide')
+
     })
 
 }
@@ -56,6 +59,7 @@ custominput.addEventListener('keyup', () => {
 
 
 enterbutton.addEventListener('click', () => {
+
 
 
     if (billammount.value == '' || billammount.value == undefined) {
@@ -88,20 +92,29 @@ enterbutton.addEventListener('click', () => {
         console.log('condition 4');
 
     }
-   
+
 
     else {
-        let perpersonammount = (Number(billammount.value) * Number(tipvalue)) / 100;
+
+        let perpersonammount
+
+        if (boolean != true) {
+            perpersonammount = (Number(billammount.value) * Number(tipvalue)) / 100;
+        }
+        else {
+            perpersonammount = (Number(billammount.value) * Number(custominput.value)) / 100;
+        }
+
         perperson.innerHTML = perpersonammount;
-        totalbill.innerHTML = perpersonammount * numberofpeople.value; 
+        totalbill.innerHTML = perpersonammount * numberofpeople.value;
+
+
     }
 
 
 })
 
-if(custombtn.clicked == true){
-    alert('clicked');
-}
+
 
 
 
