@@ -60,13 +60,10 @@ custominput.addEventListener('keyup', () => {
 
 enterbutton.addEventListener('click', () => {
 
-
-
     if (billammount.value == '' || billammount.value == undefined) {
         billinput.classList.remove('hide')
         billinput.innerHTML = 'Bill ammount cannot be empty'
         perperson.innerHTML = "$0.00"
-
         console.log('condition 1');
 
     }
@@ -77,7 +74,7 @@ enterbutton.addEventListener('click', () => {
         console.log('condition 2');
 
     }
-    else if (numberofpeople.value == ' ') {
+    else if (numberofpeople.value == '' || numberofpeople.value == undefined ) {
         billinput.classList.add('hide')
         peopleinput.classList.remove('hide')
         peopleinput.innerHTML = 'Cannot be empty'
