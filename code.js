@@ -35,6 +35,9 @@ custombtn.addEventListener('click', () => {
 
 reset.addEventListener('click', () => {
     selectedtip[0].classList.add('hide')
+    perperson.innerHTML = "$0.00";
+    totalbill.innerHTML = "$0.00";
+
 
     for (let inputs of input) {
         inputs.value = '';
