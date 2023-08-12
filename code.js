@@ -56,7 +56,6 @@ for (let btn = 0; btn <= tippercentage.length - 2; btn++) {
     })
 
 }
-
 custominput.addEventListener('keyup', () => {
     selectedtip[0].classList.remove('hide')
     tipammount.innerHTML = custominput.value + "%";
