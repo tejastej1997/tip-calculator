@@ -27,18 +27,16 @@ var percentage = false;
 
 custombtn.addEventListener('click', () => {
     custominput.classList.remove('hide')
+    percentageinput.classList.add('hide')
     selectedtip[0].classList.add('hide')
     boolean = true;
 })
 
-
-
 reset.addEventListener('click', () => {
     selectedtip[0].classList.add('hide')
+    percentageinput.classList.add('hide')
     perperson.innerHTML = "$0.00";
     totalbill.innerHTML = "$0.00";
-
-
     for (let inputs of input) {
         inputs.value = '';
     }
@@ -114,6 +112,8 @@ enterbutton.addEventListener('click', () => {
     else {
 
         peopleinput.classList.add('hide')
+        billinput.classList.add('hide')
+
 
         let perpersonammount;
 
