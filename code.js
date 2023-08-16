@@ -40,7 +40,6 @@ reset.addEventListener('click', () => {
     for (let inputs of input) {
         inputs.value = '';
     }
-
 })
 
 
