@@ -42,7 +42,6 @@ reset.addEventListener('click', () => {
     }
 })
 
-
 for (let btn = 0; btn <= tippercentage.length - 2; btn++) {
 
     tippercentage[btn].addEventListener('click', () => {
