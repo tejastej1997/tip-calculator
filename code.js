@@ -17,8 +17,6 @@ let totalbill = document.getElementById('total-bill')
 let percentageinput = document.getElementById('percentage-input')
 
 
-
-
 let tipvalue;
 
 
@@ -43,7 +41,6 @@ reset.addEventListener('click', () => {
 })
 
 for (let btn = 0; btn <= tippercentage.length - 2; btn++) {
-
     tippercentage[btn].addEventListener('click', () => {
         tipvalue = tippercentage[btn].value;
         tipammount.innerHTML = tippercentage[btn].value + "%";
