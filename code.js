@@ -16,9 +16,7 @@ let input = document.querySelectorAll('input')
 let totalbill = document.getElementById('total-bill')
 let percentageinput = document.getElementById('percentage-input')
 
-
 let tipvalue;
-
 
 var boolean = false;
 var percentage = false;
