@@ -18,6 +18,8 @@ let percentageinput = document.getElementById('percentage-input')
 
 let tipvalue;
 
+
+
 var boolean = false;
 var percentage = false;
 
