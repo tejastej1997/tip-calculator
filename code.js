@@ -18,8 +18,6 @@ let percentageinput = document.getElementById('percentage-input')
 
 let tipvalue;
 
-
-
 var boolean = false;
 var percentage = false;
 
@@ -29,6 +27,7 @@ custombtn.addEventListener('click', () => {
     selectedtip[0].classList.add('hide')
     boolean = true;
 })
+
 
 reset.addEventListener('click', () => {
     selectedtip[0].classList.add('hide')
