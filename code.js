@@ -29,8 +29,6 @@ custombtn.addEventListener('click', () => {
 })
 
 
-
-
 reset.addEventListener('click', () => {
     selectedtip[0].classList.add('hide')
     percentageinput.classList.add('hide')
