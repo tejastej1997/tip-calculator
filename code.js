@@ -59,7 +59,6 @@ custominput.addEventListener('keyup', () => {
 })
 
 
-
 enterbutton.addEventListener('click', () => {
 
     if (billammount.value == '' || billammount.value == undefined) {
@@ -123,9 +122,7 @@ enterbutton.addEventListener('click', () => {
         perperson.innerHTML = perpersonammount.toFixed(2);
         totalbill.innerHTML = perpersonammount.toFixed(2) * numberofpeople.value;
 
-
     }
-
 
 })
 
