@@ -119,6 +119,8 @@ enterbutton.addEventListener('click', () => {
             perpersonammount = (Number(billammount.value) * Number(custominput.value)) / 100;
         }
 
+        
+
         perperson.innerHTML = perpersonammount.toFixed(2);
         totalbill.innerHTML = perpersonammount.toFixed(2) * numberofpeople.value;
 
