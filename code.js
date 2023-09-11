@@ -1,136 +1,108 @@
+//Uso de "const" para definir variables de elementos seleccionados y cambiar a **camelCase** sus nombres
 
-let custombtn = document.getElementById('custom-btn')
-let custominput = document.getElementById('custom-input')
-let reset = document.getElementById('reset')
-let tippercentage = document.querySelectorAll('.tipcalculator__options-opt')
-let selectedtip = document.getElementsByClassName('tipcalculator__selected-tip')
-let enterbutton = document.getElementById('enter-button')
-let billinput = document.getElementById('bill-input')
-let billammount = document.getElementById('bill-ammount')
-let perperson = document.getElementById('per-person')
-let peopleinput = document.getElementById('people-input')
-let numberofpeople = document.getElementById('number-of-people')
-let tipinput = document.getElementById('tip-input')
-let tipammount = document.getElementById('tip-ammount')
-let input = document.querySelectorAll('input')
-let totalbill = document.getElementById('total-bill')
-let percentageinput = document.getElementById('percentage-input')
+const customBtn = document.getElementById("custom-btn");
+const customInput = document.getElementById("custom-input");
+const reset = document.getElementById("reset");
 
-let tipvalue;
+//Change the selector of all buttons with tipcalculator__options-opt classes from: ".tipcalculator__options-opt" to ".tipcalculator__options-opt:not(.custom)", this to prevent it from including the "custom" button since it is being accessed this in the constant "customBtn" and will have its own eventListener
+const tipPercentageButtons = document.querySelectorAll(
+  ".tipcalculator__options-opt:not(.custom)"
+);
 
-var boolean = false;
-var percentage = false;
+const selectedTip = document.querySelector(".tipcalculator__selected-tip");
+const enterButton = document.getElementById("enter-button");
+const billInput = document.getElementById("bill-input");
+const billAmount = document.getElementById("bill-ammount");
+const perPerson = document.getElementById("per-person");
+const peopleInput = document.getElementById("people-input");
+const numberOfPeople = document.getElementById("number-of-people");
+const tipInput = document.getElementById("tip-input");
+const tipAmount = document.getElementById("tip-ammount");
+const totalBill = document.getElementById("total-bill");
+const percentageInput = document.getElementById("percentage-input");
+const inputs = document.querySelectorAll("input");
 
-custombtn.addEventListener('click', () => {
-    custominput.classList.remove('hide')
-    percentageinput.classList.add('hide')
-    selectedtip[0].classList.add('hide')
-    boolean = true;
-})
+//Add more descriptive variable names
 
-reset.addEventListener('click', () => {
-    selectedtip[0].classList.add('hide')
-    percentageinput.classList.add('hide')
-    perperson.innerHTML = "$0.00";
-    totalbill.innerHTML = "$0.00";
-    for (let inputs of input) {
-        inputs.value = '';
-    }
-})
+let selectedTipValue;
+let customTipSelected = false;
+let percentageSelected = false;
 
-for (let btn = 0; btn <= tippercentage.length - 2; btn++) {
-    tippercentage[btn].addEventListener('click', () => {
-        tipvalue = tippercentage[btn].value;
-        tipammount.innerHTML = tippercentage[btn].value + "%";
-        selectedtip[0].classList.remove('hide')
-        boolean = false;
-        percentage= true;
-        custominput.classList.add('hide')
-        percentageinput.classList.add('hide')
+customBtn.addEventListener("click", () => {
+  customInput.classList.remove("hide");
+  selectedTip.classList.add("hide");
+  customTipSelected = true;
+});
 
-    })
+reset.addEventListener("click", () => {
+  selectedTip.classList.add("hide");
+  perPerson.innerHTML = "$0.00";
+  totalBill.innerHTML = "$0.00";
 
+  inputs.forEach((inputField) => {
+    inputField.value = "";
+  });
+});
+
+function updateTipPercentage(tipValue) {
+  tipAmount.innerHTML = `${tipValue}%`;
 }
 
+//Change selectedTip[0] to selectedTip
 
-custominput.addEventListener('keyup', () => {
-    selectedtip[0].classList.remove('hide')
-    tipammount.innerHTML = custominput.value + "%";
-})
+tipPercentageButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    selectedTipValue = button.value;
+    updateTipPercentage(selectedTipValue);
+    selectedTip.classList.remove("hide");
+    customTipSelected = false;
+    percentageSelected = true;
+    customInput.classList.add("hide");
+    percentageInput.classList.add("hide");
+  });
+});
 
+customInput.addEventListener("keyup", () => {
+  toggleElementVisibility(selectedTip, true);
+  updateTipPercentage(customInput.value);
+});
 
-enterbutton.addEventListener('click', () => {
+//Separate the validation and calculation logic in a separate function, and pass to the click event of the "enterButton"
 
-    if (billammount.value == '' || billammount.value == undefined) {
-        billinput.classList.remove('hide')
-        billinput.innerHTML = 'Bill ammount cannot be empty'
-        perperson.innerHTML = "$0.00"
-       
+function calculateAndDisplay() {
+  const bill = parseFloat(billAmount.value);
+  const numberOfPeopleValue = parseInt(numberOfPeople.value);
 
-    }
-    else if (billammount.value == 0) {
-        billinput.classList.remove('hide')
-        billinput.innerHTML = 'Bill ammount cannot be Zero'
-        peopleinput.innerHTML = 'Cannot be Zero'
-    }
-    else if (percentage == false) {
-        percentageinput.classList.remove('hide')
-        billinput.classList.add('hide')
+  if (isNaN(bill) || bill <= 0) {
+    billInput.classList.remove("hide");
+    billInput.innerHTML =
+      bill === 0
+        ? "Bill ammount cannot be Zero"
+        : "Bill ammount cannot be empty";
+    perPerson.innerHTML = "$0.00";
+  }
 
-    }
-    else if (numberofpeople.value == '' || numberofpeople.value == undefined) {
-        peopleinput.classList.remove('hide')
-        peopleinput.innerHTML = 'Cannot be empty'
-     
+  if (isNaN(numberOfPeopleValue) || numberOfPeopleValue <= 0) {
+    peopleInput.classList.remove("hide");
+    peopleInput.innerHTML =
+      numberOfPeopleValue === 0 ? "Cannot be zero" : "Cannot be empty";
+    return;
+  }
 
-    }
-    else if (numberofpeople.value == 0) {
-        billinput.classList.add('hide')
-        peopleinput.classList.remove('hide')
-        peopleinput.innerHTML = 'Cannot be Zero'
+  let tipPercentage = customTipSelected
+    ? parseFloat(customInput.value)
+    : parseFloat(selectedTipValue);
 
-     
+  if (isNaN(tipPercentage) || tipPercentage < 0) {
+    percentageInput.classList.remove("hide");
+    billInput.classList.add("hide");
+    return;
+  }
 
-    }
-    else if (boolean == true && custominput.value == '' || custominput.value == undefined) {
-        tipinput.classList.remove('hide')
-        tipinput.innerHTML = 'Cannot be Empty'
-        // console.log('custom input');
-    }
-    else if (boolean == true && custominput.value == 0) {
-        tipinput.classList.remove('hide')
-        tipinput.innerHTML = 'Cannot be Zero'
-        // console.log('custom input');
-    }
+  peopleInput.classList.add("hide");
+  const perPersonAmount = (bill * tipPercentage) / 100 / numberOfPeopleValue;
+  perPerson.innerHTML = perPersonAmount.toFixed(2);
+  totalBill.innerHTML = (perPersonAmount * numberOfPeopleValue).toFixed(2);
+}
 
-
-    else {
-
-        peopleinput.classList.add('hide')
-        billinput.classList.add('hide')
-
-
-        let perpersonammount;
-
-        if (boolean != true) {
-            perpersonammount = (Number(billammount.value) * Number(tipvalue)) / 100;
-        }
-        else {
-            perpersonammount = (Number(billammount.value) * Number(custominput.value)) / 100;
-        }
-
-        
-
-        perperson.innerHTML = perpersonammount.toFixed(2);
-        totalbill.innerHTML = perpersonammount.toFixed(2) * numberofpeople.value;
-
-    }
-
-})
-
-
-
-
-
-
-
+enterButton.addEventListener("click", calculateAndDisplay);
