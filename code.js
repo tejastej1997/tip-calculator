@@ -9,6 +9,8 @@ const tipPercentageButtons = document.querySelectorAll(
   ".tipcalculator__options-opt:not(.custom)"
 );
 
+
+
 const selectedTip = document.querySelector(".tipcalculator__selected-tip");
 const enterButton = document.getElementById("enter-button");
 const billInput = document.getElementById("bill-input");
